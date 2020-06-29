@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class DayCard extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Here's the Day Card</h1>
-            </div>
-        )
-    }
+export default function DayCard() {
+    return (
+        <div>
+            <h1>Here's the day card from the function</h1>
+        </div>
+    )
 }
