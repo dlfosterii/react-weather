@@ -1,17 +1,19 @@
+import { CHANGE_LOCATION } from '../actions/searchActions';
+
 const initialState = {
-    loc: [
-        {
-            
-            
-        }
-    ]
+    data: {},
 }
 
 function searchReducer(state = initialState, action) {
-    if (action.type === CHANGE_LOCATION) {
-        return action.status;
+    switch (action.type) {
+        case CHANGE_LOCATION:
+            return {
+                ...state,
+                data: action.data
+            }
+        default:
+            return state
     }
-    return state;
 }
 
 export default searchReducer;

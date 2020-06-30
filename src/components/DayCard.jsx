@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function DayCard() {
+export default function DayCard(props) {
+    console.log(props.data.city)
+
     return (
         <div>
-            <h1>Here's the day card from the function</h1>
+            {props.data.city && <h1>{props.data.city.name}</h1>}
         </div>
     )
 }

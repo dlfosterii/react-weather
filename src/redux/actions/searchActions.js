@@ -1,7 +1,8 @@
+export const CHANGE_LOCATION = 'CHANGE_LOCATION'
 
-export const changeLocation = (index) => {
+export const changeLocation = (data) => {
     return {
-        type: 'CHANGE_LOCATION',
-        index
+        type: CHANGE_LOCATION,
+        data
     }
 }
