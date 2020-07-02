@@ -4,19 +4,33 @@ import { connect } from 'react-redux';
 
 class DailyForecast extends Component {
     render() {
-        if (Object.keys(this.props.forecast).length > 0) {console.log(this.props.forecast)}
+        console.log(this.props)
         return (
             <div>
-                <DayCard 
-                data = {this.props.forecast}/>
+            {this.props.city && <h1>{this.props.city.name}</h1>}
+            <div style={container}>
+                
+                {this.props.forecast && this.props.forecast.map((forecast, index)=>{
+                    return (<DayCard 
+                        forecast = {forecast} city={this.props.city} key={index}/>)
+                })}
+            </div>
             </div>
         )
     }
 }
 
+const container = {
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    alignItems: 'center'
+}
+
 const mapStateToProps = (state) => {
     return {
-        forecast: state.data
+        city: state.data.city,
+        forecast: state.data.list
     }
 }
 

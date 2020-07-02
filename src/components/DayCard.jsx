@@ -2,21 +2,18 @@ import React from 'react';
 import styles from './DayCard.module.css';
 
 export default function DayCard(props) {
-    console.log(props.data.city)
-    // const { icon } = props.data.list[0].weather[0]
-
+    console.log(props)
     return (
-        <div>
-            {props.data.city && <h1>{props.data.city.name}</h1>}
-            <div className={styles.card}>
-                {props.data.list && <div className={styles.day}>{new Date((props.data.list[0].dt + props.data.city.timezone) * 1000).toLocaleDateString(undefined, { weekday: 'long' })}</div>}
-                {props.data.list && <div className={styles.time}>{new Date((props.data.list[0].dt + props.data.city.timezone) * 1000).toLocaleTimeString('en-US')}</div>}
-                {props.data.list && <img className={styles.image} src={`http://openweathermap.org/img/wn/${props.data.list[0].weather[0].icon}@2x.png`} />}
-                <div className={styles.temps}>
-                    {props.data.list && <div className={styles.temp}>{Math.round(props.data.list[0].main.temp)} F</div>}
 
-                </div>
+        <div className={styles.card}>
+            <div className={styles.day}>{new Date((props.forecast.dt + props.city.timezone) * 1000).toLocaleDateString(undefined, { weekday: 'long' })}</div>
+            <div className={styles.time}>{new Date((props.forecast.dt + props.city.timezone) * 1000).toLocaleTimeString('en-US')}</div>
+            <div>
+                <img className={styles.image} src={`http://openweathermap.org/img/wn/${props.forecast.weather[0].icon}@2x.png`} />
+                <div className={styles.desc}>{props.forecast.weather[0].description}</div>
             </div>
+            <div className={styles.temp}>{Math.round(props.forecast.main.temp)} F</div>
         </div>
+
     )
 }

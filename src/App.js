@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import DailyForecast from './components/DailyForecast';
 import Search from './components/Search';
+import About from './components/About';
 
 import './App.css';
 
@@ -16,9 +17,10 @@ function App() {
           <Route exact path='/' component={DailyForecast}>
             <Search />
             <DailyForecast />
+            <Link to={'/about'} style={ { padding: '15px' }}>About</Link>
           </Route>
-          <Route path='/hourly'>
-            <h1>this the hourly Forecasts</h1>
+          <Route path='/about'>
+            <About/>
           </Route>
           <Route>
             <h1>Error - 404 Not Found</h1>

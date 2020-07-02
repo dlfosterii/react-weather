@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #a1a8b6;
+  background-color: #5c92ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,4 +13,5 @@
   text-shadow: 2px 2px black;
   color: white;
 }
+
 

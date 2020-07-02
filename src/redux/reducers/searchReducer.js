@@ -1,7 +1,7 @@
 import { CHANGE_LOCATION } from '../actions/searchActions';
 
 const initialState = {
-    data: {},
+    data: {city: {}, list: []},
 }
 
 function searchReducer(state = initialState, action) {
@@ -9,7 +9,7 @@ function searchReducer(state = initialState, action) {
         case CHANGE_LOCATION:
             return {
                 ...state,
-                data: action.data
+                data: {city: action.data.city, list: action.data.list}
             }
         default:
             return state
