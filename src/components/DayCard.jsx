@@ -13,7 +13,7 @@ export default function DayCard(props) {
                 {props.data.list && <div className={styles.time}>{new Date((props.data.list[0].dt + props.data.city.timezone) * 1000).toLocaleTimeString('en-US')}</div>}
                 {props.data.list && <img className={styles.image} src={`http://openweathermap.org/img/wn/${props.data.list[0].weather[0].icon}@2x.png`} />}
                 <div className={styles.temps}>
-                    {props.data.list && <div className={styles.temp}>{props.data.list[0].main.temp}</div>}
+                    {props.data.list && <div className={styles.temp}>{Math.round(props.data.list[0].main.temp)} F</div>}
 
                 </div>
             </div>
