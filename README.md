@@ -8,6 +8,7 @@ Clone or fork from [GitHub](https://github.com/) to instal.
 
 ```bash
 npm install
+npm start
 ```
 
 ## Technical
